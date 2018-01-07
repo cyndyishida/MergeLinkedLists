@@ -24,7 +24,7 @@ class LinkedList:
             result.append(str(current.val))
             current = current.next
 
-        return "->".join(result)
+        return " -> ".join(result)
 
     __str__ = __repr__
 

@@ -1,18 +1,14 @@
-from Project1 import *
+from Project1_Solution import *
 
 def AddValues(list, fp):
     for num in fp:
-        list.append( int(num))
+        list.append( float(num))
 
 if __name__ == '__main__':
     fp = open(input("Please Enter File Name: "), "r")
-    list = LinkedList()
+    list_ = LinkedList()
 
-    AddValues(list, fp)
-
-
-
-
-    list.head = MergeSort(list.head)
-    print(list)
+    AddValues(list_, fp)
+    list_.head = MergeSort(list_.head)
+    print(list_)
     fp.close()
