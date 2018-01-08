@@ -1,22 +1,41 @@
 class LinkedListNode:
     def __init__(self, val = None):
+        """
+        :param val of node
+        :return None
+
+        Constructor for Linked List Node, initialize next to None object
+        """
         self.val = val
         self.next = None
 
-    def setVal(self, val):
-        self.val = val
+    def __le__(self, other):
+        '''
+        :param other: Linked list node
+        :return: boolean value of less than equal to other
+        '''
+        if isinstance(other, LinkedListNode):
+            return self.val <= other.val
 
-    def setNext(self, next):
-        self.next = next
 
 
 
 
 class LinkedList:
     def __init__(self):
+        """
+        :param None
+        :return None
+
+        Constructor for Singly Linked List, initialize head to None object
+        """
         self.head = None
 
     def __repr__(self):
+        '''
+        :param: none
+        :return: string representation of linked list
+        '''
         result = []
         current = self.head
 
@@ -30,6 +49,10 @@ class LinkedList:
 
 
     def append(self, data):
+        '''
+        :param data:  val for new node to be added to Linked list
+        :return: None
+        '''
         node = LinkedListNode(data)
         if self.head:
             last = self.head
@@ -41,6 +64,10 @@ class LinkedList:
             self.head = node
 
 
+'''
+ANYTHING BEFORE THIS COMMENT SHOULDN'T BE MODIFIED IN ANYWAY!
+----- START MODIFYING HERE ----
+'''
 
 
 
@@ -61,22 +88,26 @@ def DivideLists(head):
 
 
 def MergeLists(L1, L2):
-    temp = None
+    curr = None
     if not L1:
         return L2
     if not L2:
         return L1
-    if L1.val <= L2.val:
-        temp = L1
-        temp.next = MergeLists(L1.next, L2)
+    if L1 <= L2:
+        curr = L1
+        curr.next = MergeLists(L1.next, L2)
     else:
-        temp = L2
-        temp.next = MergeLists(L1, L2.next)
-    return temp
+        curr = L2
+        curr.next = MergeLists(L1, L2.next)
+    return curr
 
 
 
 def MergeSort(head):
+    '''
+    :param head: Linked List node that is the start of Linked List
+    :return: Head of the now sorted linked list
+    '''
     if not head or not head.next:
         return head
     L1,L2 = DivideLists(head)
@@ -84,4 +115,7 @@ def MergeSort(head):
     L2 = MergeSort(L2)
     head = MergeLists(L1, L2)
     return head
+
+
+
 

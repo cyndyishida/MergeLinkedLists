@@ -1,7 +1,16 @@
 import Project1_Solution as answer
 import Project1 as student
 
+
+
 def AddValues(list, fp):
+    '''
+    :param list: linked list type
+    :param fp: file pointer of values
+    :return: length of linked list
+
+    add the values from file to list
+    '''
 
     for count, num in enumerate(fp):
         list.append( float(num))
@@ -9,6 +18,11 @@ def AddValues(list, fp):
 
 
 def check(s_list, a_list):
+    '''
+    :param s_list: student linked list result
+    :param a_list: answer key linked list result
+    :return: count of number right for student linked list
+    '''
     right = 0
     # assumes students linked list is the same length as answers
     while s_list.head and a_list.head:
@@ -18,8 +32,16 @@ def check(s_list, a_list):
         a_list.head = a_list.head.next
     return right
 
-def runTest(fp):
 
+
+
+def runTest(fp):
+    '''
+    :param fp: file pointer to read in values
+    :return: number of right and the length of the linked list
+
+    creates linked lists and runs merge sort, then checks for correct result
+    '''
     s_list = student.LinkedList()
     count = AddValues(s_list,fp)
     s_list.head = student.MergeSort(s_list.head)
@@ -31,6 +53,18 @@ def runTest(fp):
     a_list.head = answer.MergeSort(a_list.head)
 
     right = check(s_list, a_list)
+
+
+   # right = 0
+
+   # while s_list.head.next:
+   #     if s_list.head <= s_list.head.next:
+   #         right +=1
+   #     s_list.head = s_list.head.next
+
+
+
+
     return right, count
 
 
