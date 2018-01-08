@@ -1,6 +1,8 @@
 import Project1_Solution as answer
 import Project1 as student
 
+## global variable for grade
+TOTAL = 0
 
 
 def AddValues(list, fp):
@@ -76,28 +78,40 @@ def test1():
     right, count = runTest(fp)
     fp.close()
 
-    return "Testcase 01: {} / {}".format(right ,count)
+    cur_total = right/count * 5
+    global TOTAL
+    TOTAL += cur_total
+    return "Testcase 01: {} / 5".format( cur_total )
 
 def test2():
     fp = open("testcase02.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    return "Testcase 02: {} / {}".format(right ,count)
+    cur_total = right/count * 5
+    global TOTAL
+    TOTAL += cur_total
+    return "Testcase 02: {} / 5".format( cur_total )
 
 def test3():
     fp = open("testcase03.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    return "Testcase 03: {} / {}".format(right ,count)
+    cur_total = right/count * 5
+    global TOTAL
+    TOTAL += cur_total
+    return "Testcase 03: {} / 5".format( cur_total )
 
 def test4():
     fp = open("testcase04.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    return "Testcase 04: {} / {}".format(right ,count)
+    cur_total = right/count * 5
+    global TOTAL
+    TOTAL += cur_total
+    return "Testcase 04: {} / 5".format( cur_total )
 
 
 def test5():
@@ -105,14 +119,20 @@ def test5():
     right, count = runTest(fp)
     fp.close()
 
-    return "Testcase 05: {} / {}".format(right ,count)
+    cur_total = right/count * 5
+    global TOTAL
+    TOTAL += cur_total
+    return "Testcase 05: {} / 5".format( cur_total )
 
 def test5():
     fp = open("testcase05.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    return "Testcase 05: {} / {}".format(right ,count)
+    cur_total = right/count * 5
+    global TOTAL
+    TOTAL += cur_total
+    return "Testcase 05: {} / 5".format( cur_total )
 
 
 def test6():
@@ -120,21 +140,30 @@ def test6():
     right, count = runTest(fp)
     fp.close()
 
-    return "Testcase 06: {} / {}".format(right ,count)
+    cur_total = right/count * 9
+    global TOTAL
+    TOTAL += cur_total
+    return "Testcase 06: {} / 9".format( cur_total )
 
 def test7():
     fp = open("testcase07.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    return "Testcase 07: {} / {}".format(right ,count)
+    cur_total = right/count * 9
+    global TOTAL
+    TOTAL += cur_total
+    return "Testcase 07: {} / 9".format( cur_total )
 
 def test8():
     fp = open("testcase08.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    return "Testcase 08: {} / {}".format(right ,count)
+    cur_total = right/count * 9
+    global TOTAL
+    TOTAL += cur_total
+    return "Testcase 08: {} / 9".format( cur_total )
 
 
 def test9():
@@ -142,14 +171,20 @@ def test9():
     right, count = runTest(fp)
     fp.close()
 
-    return "Testcase 09: {} / {}".format(right ,count)
+    cur_total = right/count * 9
+    global TOTAL
+    TOTAL += cur_total
+    return "Testcase 09: {} / 9".format( cur_total )
 
 def test10():
     fp = open("testcase10.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    return "Testcase 10: {} / {}".format(right ,count)
+    cur_total = right/count * 9
+    global TOTAL
+    TOTAL += cur_total
+    return "Testcase 10: {} / 9".format( cur_total )
 
 
 
@@ -164,6 +199,7 @@ def main():
     print(test8())
     print(test9())
     print(test10())
+    print ("\n\nTotal Score: ", TOTAL )
 
 
 # i truly believe this testcase would be much easier to make in C++ w/ template specialization
