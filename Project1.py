@@ -18,9 +18,6 @@ class LinkedListNode:
             return self.val <= other.val
 
 
-
-
-
 class LinkedList:
     def __init__(self):
         """
@@ -64,42 +61,13 @@ class LinkedList:
             self.head = node
 
 
+
 '''
 ANYTHING BEFORE THIS COMMENT SHOULDN'T BE MODIFIED IN ANYWAY!
 ----- START MODIFYING HERE ----
 '''
 
 
-
-def DivideLists(head):
-    slow = head
-    fast = head
-    if fast:
-        fast = fast.next
-    while fast:
-        fast = fast.next
-        if fast:
-            fast = fast.next
-            slow = slow.next
-    mid = slow.next
-    slow.next = None
-    return head, mid
-
-
-
-def MergeLists(L1, L2):
-    curr = None
-    if not L1:
-        return L2
-    if not L2:
-        return L1
-    if L1 <= L2:
-        curr = L1
-        curr.next = MergeLists(L1.next, L2)
-    else:
-        curr = L2
-        curr.next = MergeLists(L1, L2.next)
-    return curr
 
 
 
@@ -108,11 +76,6 @@ def MergeSort(head):
     :param head: Linked List node that is the start of Linked List
     :return: Head of the now sorted linked list
     '''
-    if not head or not head.next:
-        return head
-    L1,L2 = DivideLists(head)
-    L1 = MergeSort(L1)
-    L2 = MergeSort(L2)
-    head = MergeLists(L1, L2)
+
     return head
 

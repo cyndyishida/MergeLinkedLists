@@ -13,26 +13,26 @@ def makeTest(start, end, _range):
     fp.close()
 
 
-#makeTest(0, 10, 15) # all positive repeats
-#X = 2
-#makeTest(-25, -1, 10) # all negative
-#X = 3
-#makeTest(-10, 10, 10) # mixed values
-#
-#X = 4
-#fp = open("testcase04.txt", "w") # positive floats
-#for i in range(10):
-#    print(str(random.random()), file = fp)
-#
-#fp.close()
-#
-#X = 5
-#makeTest(0, 100, 500) # all positive repeats
-#
-#X = 6
-#makeTest(-1000, -1, 200) # all negatives
-#X = 7
-#makeTest(-1000, 1000, 600) # mixed values
+makeTest(0, 10, 15) # all positive repeats
+X = 2
+makeTest(-25, -1, 10) # all negative
+X = 3
+makeTest(-10, 10, 10) # mixed values
+
+X = 4
+fp = open("testcase04.txt", "w") # positive floats
+for i in range(10):
+    print(str(random.random()), file = fp)
+
+fp.close()
+
+X = 5
+makeTest(0, 100, 500) # all positive repeats
+
+X = 6
+makeTest(-1000, -1, 200) # all negatives
+X = 7
+makeTest(-1000, 1000, 600) # mixed values
 
 X = 8
 fp = open("testcase08.txt", "w") # positive floats
