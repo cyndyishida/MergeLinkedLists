@@ -73,9 +73,7 @@ ANYTHING BEFORE THIS COMMENT SHOULDN'T BE MODIFIED IN ANYWAY!
 
 def DivideLists(head):
     slow = head
-    fast = head
-    if fast:
-        fast = fast.next
+    fast = head.next if head else head
     while fast:
         fast = fast.next
         if fast:
