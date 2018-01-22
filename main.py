@@ -1,17 +1,16 @@
-from Project2_Solution import *
+from MergeSort import *
 import sys
 
 
-def AddValues(list, fp):
+def AddValues(list_, fp):
     '''
-    :param list: linked list to add values to
+    :param list_: linked list to add values to
     :param fp: file pointer to read from
     :return:  None
     '''
     for num in fp:
-        list.push_back( float(num))
+        list_.push_back( float(num))
 
-sys.setrecursionlimit(90000)
 
 
 

@@ -78,40 +78,40 @@ def test1():
     right, count = runTest(fp)
     fp.close()
 
-    cur_total = right/count * 5
+    cur_total = round(right/count * 5, 2)
     global TOTAL
     TOTAL += cur_total
-    return "Testcase 01: {} / 5".format( cur_total )
+    return f"Testcase 01: {cur_total} / 5"
 
 def test2():
     fp = open("testcase02.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    cur_total = right/count * 5
+    cur_total = round(right/count * 5, 2)
     global TOTAL
     TOTAL += cur_total
-    return "Testcase 02: {} / 5".format( cur_total )
+    return f"Testcase 02: {cur_total} / 5"
 
 def test3():
     fp = open("testcase03.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    cur_total = right/count * 5
+    cur_total = round(right/count * 5, 2)
     global TOTAL
     TOTAL += cur_total
-    return "Testcase 03: {} / 5".format( cur_total )
+    return f"Testcase 03: {cur_total } / 5"
 
 def test4():
     fp = open("testcase04.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    cur_total = right/count * 5
+    cur_total = round(right/count * 5, 2)
     global TOTAL
     TOTAL += cur_total
-    return "Testcase 04: {} / 5".format( cur_total )
+    return f"Testcase 04: {cur_total} / 5"
 
 
 def test5():
@@ -119,20 +119,10 @@ def test5():
     right, count = runTest(fp)
     fp.close()
 
-    cur_total = right/count * 5
+    cur_total = round(right/count * 5, 2)
     global TOTAL
     TOTAL += cur_total
-    return "Testcase 05: {} / 5".format( cur_total )
-
-def test5():
-    fp = open("testcase05.txt", 'r')
-    right, count = runTest(fp)
-    fp.close()
-
-    cur_total = right/count * 5
-    global TOTAL
-    TOTAL += cur_total
-    return "Testcase 05: {} / 5".format( cur_total )
+    return f"Testcase 05: {cur_total} / 5"
 
 
 def test6():
@@ -140,30 +130,30 @@ def test6():
     right, count = runTest(fp)
     fp.close()
 
-    cur_total = right/count * 9
+    cur_total = round(right/count * 9, 2)
     global TOTAL
     TOTAL += cur_total
-    return "Testcase 06: {} / 9".format( cur_total )
+    return f"Testcase 06: {cur_total} / 9"
 
 def test7():
     fp = open("testcase07.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    cur_total = right/count * 9
+    cur_total = round(right/count * 9, 2)
     global TOTAL
     TOTAL += cur_total
-    return "Testcase 07: {} / 9".format( cur_total )
+    return f"Testcase 07: {cur_total} / 9"
 
 def test8():
     fp = open("testcase08.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    cur_total = right/count * 9
+    cur_total = round(right/count * 9, 2)
     global TOTAL
     TOTAL += cur_total
-    return "Testcase 08: {} / 9".format( cur_total )
+    return f"Testcase 08: {cur_total} / 9"
 
 
 def test9():
@@ -171,20 +161,20 @@ def test9():
     right, count = runTest(fp)
     fp.close()
 
-    cur_total = right/count * 9
+    cur_total = round(right/count * 9, 2)
     global TOTAL
     TOTAL += cur_total
-    return "Testcase 09: {} / 9".format( cur_total )
+    return f"Testcase 09: {cur_total} / 9"
 
 def test10():
     fp = open("testcase10.txt", 'r')
     right, count = runTest(fp)
     fp.close()
 
-    cur_total = right/count * 9
+    cur_total = round(right/count * 9, 2)
     global TOTAL
     TOTAL += cur_total
-    return "Testcase 10: {} / 9".format( cur_total )
+    return f"Testcase 10: {cur_total} / 9"
 
 
 
@@ -202,7 +192,7 @@ def main():
     print ("\n\nTotal Score: ", TOTAL )
 
 
-# i truly believe this testcase would be much easier to make in C++ w/ template specialization
+# i truly believe this testcase scheme would be much easier to make in C++ w/ template specialization
 # look into this next semester
 if __name__ == '__main__':
     main()
