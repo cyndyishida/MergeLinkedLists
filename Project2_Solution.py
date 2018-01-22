@@ -48,7 +48,7 @@ class LinkedList:
     __str__ = __repr__
 
 
-    def append(self, data):
+    def push_back(self, data):
         '''
         :param data:  val for new node to be added to Linked list
         :return: None
@@ -73,9 +73,7 @@ ANYTHING BEFORE THIS COMMENT SHOULDN'T BE MODIFIED IN ANYWAY!
 
 def DivideLists(head):
     slow = head
-    fast = head
-    if fast:
-        fast = fast.next
+    fast = head.next if head else head
     while fast:
         fast = fast.next
         if fast:
@@ -115,7 +113,4 @@ def MergeSort(head):
     L2 = MergeSort(L2)
     head = MergeLists(L1, L2)
     return head
-
-
-
 
