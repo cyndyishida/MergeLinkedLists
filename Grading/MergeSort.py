@@ -1,6 +1,5 @@
-
 class LinkedListNode:
-    def __init__(self, val = None):
+    def __init__(self, val=None):
         """
         :param val of node
         :return None
@@ -17,9 +16,6 @@ class LinkedListNode:
         '''
         if isinstance(other, LinkedListNode):
             return self.val <= other.val
-
-
-
 
 
 class LinkedList:
@@ -48,7 +44,6 @@ class LinkedList:
 
     __str__ = __repr__
 
-
     def push_back(self, data):
         '''
         :param data:  val for new node to be added to Linked list
@@ -65,15 +60,65 @@ class LinkedList:
             self.head = node
 
 
-
-
 '''
 ANYTHING BEFORE THIS COMMENT SHOULDN'T BE MODIFIED IN ANYWAY!
 '''
+
+
 # --------- START MODIFYING HERE ---------
 
 
 def MergeSort(head):
+    if head.next is None:
+        return head
 
-    return head
+    # Find the mid point of the list using a slow and fast pointer
+    prev = slow = fast = head
+    while slow and fast:
+        prev = slow
+        slow = slow.next
+        fast = fast.next
+        if fast:
+            fast = fast.next
 
+    # Detach the right half of the list
+    right = slow
+    prev.next = None
+
+    left = MergeSort(head)
+    right = MergeSort(right)
+
+    return merge(left, right)
+
+
+def merge(left, right):
+    le = left
+    r = right
+    result = result_walk = None
+    while le and r:
+        is_left = le <= r
+        node = le if is_left else r
+
+        if result is None:
+            result = result_walk = node
+        else:
+            result_walk.next = node
+            result_walk = result_walk.next
+
+        # "node" still contains connections to the rest of the list
+        # we must detach after adding it to the result
+        prev = node
+        node = node.next
+        prev.next = None
+
+        # Determine which pointer node to update
+        le = node if is_left else le
+        r = node if not is_left else r
+
+    # Attach the remainder of the list to the result
+    if le:
+        result_walk.next = le
+    else:
+        result_walk.next = r
+
+    return result

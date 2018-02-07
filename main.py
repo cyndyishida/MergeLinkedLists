@@ -1,4 +1,5 @@
-from MergeSort import *
+#!/usr/bin/python3
+from Project2_Solution import *
 import sys
 
 

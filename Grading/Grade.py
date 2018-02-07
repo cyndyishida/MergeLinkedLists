@@ -1,6 +1,6 @@
 import Project2_Solution as answer
 import MergeSort as student
-
+import LinkedList as llist
 ## global variable for grade
 TOTAL = 0
 
@@ -44,12 +44,12 @@ def runTest(fp):
 
     creates linked lists and runs merge sort, then checks for correct result
     '''
-    s_list = student.LinkedList()
+    s_list = llist.LinkedList()
     count = AddValues(s_list,fp)
     s_list.head = student.MergeSort(s_list.head)
 
 
-    a_list = answer.LinkedList()
+    a_list = llist.LinkedList()
     fp.seek(0,0)
     AddValues(a_list,fp)
     a_list.head = answer.MergeSort(a_list.head)
