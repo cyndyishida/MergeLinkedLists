@@ -72,6 +72,12 @@ ANYTHING BEFORE THIS COMMENT SHOULDN'T BE MODIFIED IN ANYWAY!
 
 
 def DivideLists(head):
+    '''
+    :param head: linked list node 
+    :return: 2 linked list nodes
+    
+    algorithm: slow/fast pointers, fast goes twice as quickly, resulting in the slow ending at the mid point.
+    '''
     slow = head
     fast = head.next if head else head
     while fast:
@@ -86,6 +92,13 @@ def DivideLists(head):
 
 
 def MergeLists(L1, L2):
+    '''
+    :param L1: linked list node
+    :param L2: linked list node
+    :return: head of linked list node 
+    
+    algorithm: compare nodes and recursively add to sorted list by moving up pointers
+    '''
     curr = None
     if not L1:
         return L2
